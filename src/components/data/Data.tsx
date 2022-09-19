@@ -7,16 +7,16 @@ function Data(props: any) {
 
   let navigate = useNavigate();
 
-  console.log(datos)
+  console.log(datos);
 
   const [visible, setVisible] = useState(false);
 
   const [ids, setIds] = useState("");
 
-  console.log(ids)
+  console.log(ids);
 
-  const onClick = (props:any) => {
-    console.log(props)
+  const onClick = (props: any) => {
+    console.log(props);
 
     navigate(`/${props}`);
   };
@@ -35,6 +35,7 @@ function Data(props: any) {
           <Image
             preview={{ visible: false }}
             width={200}
+            height={200}
             src={datos.image}
             onClick={() => setVisible(true)}
           />
@@ -44,11 +45,18 @@ function Data(props: any) {
       <div>
         <Typography.Title
           level={3}
-          onClick={(value:any) => {onClick(datos._id)}}
-          style={{ cursor: "pointer" }}
+          // onClick={(value:any) => {onClick(datos._id)}}
         >
           {datos.title}
         </Typography.Title>
+      </div>
+
+      <div>
+        <p
+        // onClick={(value:any) => {onClick(datos._id)}}
+        >
+          {datos.body}
+        </p>
       </div>
     </>
   );

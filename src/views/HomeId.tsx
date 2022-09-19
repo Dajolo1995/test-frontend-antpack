@@ -15,6 +15,8 @@ function HomeId() {
     try {
       const res: any = await clienteAxios.get(`/data/${id}`);
 
+      console.log(res)
+
       const response: any = res.data;
 
       setData(response);
