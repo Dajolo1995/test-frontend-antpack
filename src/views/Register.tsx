@@ -89,7 +89,7 @@ function Register(props: any) {
           title: "Oops...",
           text: "User create Ok!",
         });
-        setAuth(true)
+        setAuth(true);
       } catch (error: any) {
         console.log(error);
 
@@ -150,7 +150,7 @@ function Register(props: any) {
               style={{ width: "98%" }}
               size="small"
               required
-              placeholder="name"
+              placeholder="Nickname"
               onChange={onChange}
             />
           </Col>
@@ -158,13 +158,13 @@ function Register(props: any) {
           <Col span={12}>
             <label htmlFor="">Email</label>
             <Input
-            type="email"
+              type="email"
               name="email"
               value={email}
               style={{ width: "98%" }}
               size="small"
               required
-              placeholder="last name"
+              placeholder="Email"
               onChange={onChange}
             />
           </Col>
@@ -192,7 +192,7 @@ function Register(props: any) {
               onChange={onChange}
               size="small"
               style={{ marginBottom: "10px", width: "98%" }}
-              placeholder="input password"
+              placeholder="input recover password"
               iconRender={(visible) =>
                 visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
               }
@@ -200,8 +200,9 @@ function Register(props: any) {
           </Col>
 
           <Col span={12}>
-            <label htmlFor="">phone</label>
+            <label htmlFor="">Country</label>
             <Select
+              placeholder="country"
               size="small"
               onChange={handleChange}
               style={{ width: "98%" }}
@@ -221,12 +222,24 @@ function Register(props: any) {
               style={{ width: "98%" }}
               size="small"
               required
-              placeholder="last name"
+              placeholder="Phone"
+              prefix={
+                <>
+                  {paises.length === 0 ? null : (
+                    <img
+                      src={`https://flagcdn.com/16x12/${paises[0]?.code?.toLowerCase()}.png`}
+                      width="16"
+                      height="12"
+                      alt="Sudáfrica"
+                    />
+                  )}
+                </>
+              }
             />
           </Col>
 
           <Col span={12}>
-            <label htmlFor="">phone</label>
+            <label htmlFor="">City</label>
             <Input
               name="city"
               value={city}
@@ -234,7 +247,7 @@ function Register(props: any) {
               style={{ width: "98%" }}
               size="small"
               required
-              placeholder="last name"
+              placeholder="City"
               prefix={
                 <>
                   {paises.length === 0 ? null : (
